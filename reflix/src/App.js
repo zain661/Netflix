@@ -123,9 +123,12 @@ class App extends Component {
             <Route
               exact
               path="/catalog/:movieId"
-              render={({ match }) => (
-                <MovieDetails match={match} movies={this.state.movies} />
-              )}
+              render={({ match }) => {
+                const movieId = this.props.match.params.movieId;
+                const movie = this.props.movies.find(m => m.id == movieId)
+                console.log(movie);
+               return <MovieDetails match={match} movie={movie} />
+              }}
             />
           </div>
         {/* </div> */}

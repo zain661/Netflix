@@ -2,10 +2,7 @@ import React, { Component } from "react";
 
 class MovieDetails extends Component {
   render() {
-    console.log(this.props.match)
-    const movieId = this.props.match.params.movieId;
-    let movie = this.props.movies.find(m => m.id == movieId)
-    console.log(movie);
+    let movie = this.props.movie
     return (
       <div className="movie-detail">
         <h1>
